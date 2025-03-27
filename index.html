@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Contact List on JS</h1>
+    <form class="addContact-form" action="#" onsubmit="AddContact()">
+      <input
+        class="addContact-form_input"
+        type="text"
+        pattern="[A-Za-z]{3,}"
+        title="Please enter at least 3 characters"
+        placeholder="Name"
+      />
+      <input
+        class="addContact-form_input"
+        type="text"
+        pattern="[A-Za-z]{3,}"
+        title="Please enter at least 3 characters"
+        placeholder="Vacancy"
+      />
+      <input
+        class="addContact-form_input"
+        type="text"
+        placeholder="Phone +X XXX XXX XX XX"
+      />
+      <input type="submit" value="ADD" />
+    </form>
+
+    <a href="#" class="btn" onclick="ClearContacts()" type="button"
+      >Clear List</a
+    >
+    <a href="#" class="btn" onclick="SearchContacts()" type="button">Search</a>
+    <div class="contacts">
+      <table>
+      <tbody>
+        <tr>
+          <td>A</td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td>O</td>
+        </tr>
+        <tr>
+          <td>C</td>
+          <td>P</td>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td>Q</td>
+        </tr>
+        <tr>
+          <td>E</td>
+          <td>R</td>
+        </tr>
+        <tr>
+          <td>F</td>
+          <td>S</td>
+        </tr>
+        <tr>
+          <td>G</td>
+          <td>T</td>
+        </tr>
+        <tr>
+          <td>H</td>
+          <td>U</td>
+        </tr>
+        <tr>
+          <td>I</td>
+          <td>V</td>
+        </tr>
+        <tr>
+          <td>J</td>
+          <td>W</td>
+        </tr>
+        <tr>
+          <td>K</td>
+          <td>X</td>
+        </tr>
+        <tr>
+          <td>L</td>
+          <td>Y</td>
+        </tr>
+        <tr>
+          <td>M</td>
+          <td>Z</td>
+        </tr>
+    </table></table>
+    </div>
+  </body>
+  <script src="../script/main.js"></script>
+</html>
