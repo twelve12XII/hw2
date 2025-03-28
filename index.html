@@ -28,70 +28,79 @@
         type="text"
         placeholder="Phone +X XXX XXX XX XX"
       />
-      <input type="submit" value="ADD" />
+      <input class="btn" type="submit" value="ADD" />
     </form>
-
-    <a href="#" class="btn" onclick="ClearContacts()" type="button"
-      >Clear List</a
-    >
-    <a href="#" class="btn" onclick="SearchContacts()" type="button">Search</a>
+    <input class="btn" onclick="ClearContacts()" type="button" value="Clear List">
+    <input class="btn" onclick="SearchContacts()" type="button" value="Search">
     <div class="contacts">
       <table>
-      <tbody>
-        <tr>
-          <td>A</td>
-          <td>N</td>
-        </tr>
-        <tr>
-          <td>B</td>
-          <td>O</td>
-        </tr>
-        <tr>
-          <td>C</td>
-          <td>P</td>
-        </tr>
-        <tr>
-          <td>D</td>
-          <td>Q</td>
-        </tr>
-        <tr>
-          <td>E</td>
-          <td>R</td>
-        </tr>
-        <tr>
-          <td>F</td>
-          <td>S</td>
-        </tr>
-        <tr>
-          <td>G</td>
-          <td>T</td>
-        </tr>
-        <tr>
-          <td>H</td>
-          <td>U</td>
-        </tr>
-        <tr>
-          <td>I</td>
-          <td>V</td>
-        </tr>
-        <tr>
-          <td>J</td>
-          <td>W</td>
-        </tr>
-        <tr>
-          <td>K</td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <td>L</td>
-          <td>Y</td>
-        </tr>
-        <tr>
-          <td>M</td>
-          <td>Z</td>
-        </tr>
-    </table></table>
+        <tbody>
+          <tr>
+            <td><a class="letter">A</a></td>
+            <td><a class="letter">N</a></td>
+          </tr>
+          <tr>
+            <td><a class="letter">B</a></td>
+            <td><a class="letter">O</a></td>
+          </tr>
+          <tr>
+            <td><a class="letter">C</a></td>
+            <td><a class="letter">P</a></td>
+          </tr>
+          <tr>
+            <td><a class="letter">D</a></td>
+            <td><a class="letter">Q</a></td>
+          </tr>
+          <tr>
+            <td><a class="letter">E</a></td>
+            <td><a class="letter">R</a></td>
+          </tr>
+          <tr>
+            <td><a class="letter">F</a></td>
+            <td><a class="letter">S</a></td>
+          </tr>
+          <tr>
+            <td><a class="letter">G</a></td>
+            <td><a class="letter">T</a></td>
+          </tr>
+          <tr>
+            <td><a class="letter">H</a></td>
+            <td><a class="letter">U</a></td>
+          </tr>
+          <tr>
+            <td><a class="letter">I</a></td>
+            <td><a class="letter">V</a></td>
+          </tr>
+          <tr>
+            <td><a class="letter">J</a></td>
+            <td><a class="letter">W</a></td>
+          </tr>
+          <tr>
+            <td><a class="letter">K</a></td>
+            <td><a class="letter">X</a></td>
+          </tr>
+          <tr>
+            <td><a class="letter">L</a></td>
+            <td><a class="letter">Y</a></td>
+          </tr>
+          <tr>
+            <td><a class="letter">M</a></td>
+            <td><a class="letter">Z</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <button class="close">close</button>
+        <p>Search contact</p>
+        <input class="modal_search" placeholder="Search..."></input>
+        <div class="modal-content_cards cards">
+        </div>
+        <input class="btn" onclick="showAllContacts()" type="button" value="Show all">
+      </div>
     </div>
   </body>
   <script src="../script/main.js"></script>
 </html>
+
