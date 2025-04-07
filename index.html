@@ -7,100 +7,116 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Contact List on JS</h1>
-    <form class="addContact-form" action="#" onsubmit="AddContact()">
-      <input
-        class="addContact-form_input"
-        type="text"
-        pattern="[A-Za-z]{3,}"
-        title="Please enter at least 3 characters"
-        placeholder="Name"
-      />
-      <input
-        class="addContact-form_input"
-        type="text"
-        pattern="[A-Za-z]{3,}"
-        title="Please enter at least 3 characters"
-        placeholder="Vacancy"
-      />
-      <input
-        class="addContact-form_input"
-        type="text"
-        placeholder="Phone +X XXX XXX XX XX"
-      />
-      <input class="btn" type="submit" value="ADD" />
-    </form>
-    <input class="btn" onclick="ClearContacts()" type="button" value="Clear List">
-    <input class="btn" onclick="SearchContacts()" type="button" value="Search">
-    <div class="contacts">
-      <table>
-        <tbody>
-          <tr>
-            <td><a class="letter">A</a></td>
-            <td><a class="letter">N</a></td>
-          </tr>
-          <tr>
-            <td><a class="letter">B</a></td>
-            <td><a class="letter">O</a></td>
-          </tr>
-          <tr>
-            <td><a class="letter">C</a></td>
-            <td><a class="letter">P</a></td>
-          </tr>
-          <tr>
-            <td><a class="letter">D</a></td>
-            <td><a class="letter">Q</a></td>
-          </tr>
-          <tr>
-            <td><a class="letter">E</a></td>
-            <td><a class="letter">R</a></td>
-          </tr>
-          <tr>
-            <td><a class="letter">F</a></td>
-            <td><a class="letter">S</a></td>
-          </tr>
-          <tr>
-            <td><a class="letter">G</a></td>
-            <td><a class="letter">T</a></td>
-          </tr>
-          <tr>
-            <td><a class="letter">H</a></td>
-            <td><a class="letter">U</a></td>
-          </tr>
-          <tr>
-            <td><a class="letter">I</a></td>
-            <td><a class="letter">V</a></td>
-          </tr>
-          <tr>
-            <td><a class="letter">J</a></td>
-            <td><a class="letter">W</a></td>
-          </tr>
-          <tr>
-            <td><a class="letter">K</a></td>
-            <td><a class="letter">X</a></td>
-          </tr>
-          <tr>
-            <td><a class="letter">L</a></td>
-            <td><a class="letter">Y</a></td>
-          </tr>
-          <tr>
-            <td><a class="letter">M</a></td>
-            <td><a class="letter">Z</a></td>
-          </tr>
-        </tbody>
-      </table>
+    <header class="header">
+      <h1>Contact List on JS</h1>
+    </header>
+    <div class="contact-panel">
+      <form
+        id="contact-form"
+        class="contact-panel__form contact-form"
+        action="#"
+        onsubmit="addContactFromForm()"
+      >
+        <input
+          class="contact-form_input"
+          type="text"
+          pattern="[A-Za-z]{3,}"
+          title="Please enter at least 3 characters"
+          required
+          id="name-input"
+          placeholder="Name"
+        />
+        <input
+          required
+          id="vacancy-input"
+          class="contact-form_input"
+          type="text"
+          pattern="[A-Za-z]{3,}"
+          title="Please enter at least 3 characters"
+          placeholder="Vacancy"
+        />
+        <input
+          required
+          id="phone-input"
+          class="contact-form_input"
+          pattern="\+\d \d{3} \d{3} \d{2} \d{2}"
+          title="Format: +X XXX XXX XX XX"
+          type="text"
+          placeholder="Phone +X XXX XXX XX XX"
+        />
+        <input class="btn" type="submit" value="ADD" />
+      </form>
+      <div class="contact-panel__actions">
+        <input
+          class="btn"
+          onclick="clearContacts()"
+          type="button"
+          value="Clear List"
+        />
+        <input
+          class="btn"
+          onclick="searchContacts()"
+          type="button"
+          value="Search"
+        />
+      </div>
     </div>
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <button class="close">close</button>
+    <div class="contacts"></div>
+    <div id="modal_search" class="modal">
+      <div class="modal-content search" id="search">
+        <input id="close" type="button" class="btn" value="Close" />
         <p>Search contact</p>
-        <input class="modal_search" placeholder="Search..."></input>
-        <div class="modal-content_cards cards">
-        </div>
-        <input class="btn" onclick="showAllContacts()" type="button" value="Show all">
+        <input
+          class="modal_search-input"
+          id="search-input"
+          type="text"
+          placeholder="Search..."
+        />
+        <div class="modal-content_cards cards"></div>
+        <input
+          class="btn"
+          onclick="showAllContacts()"
+          type="button"
+          value="Show all"
+        />
+      </div>
+    </div>
+    <div class="modal" id="modal_edit">
+      <div class="modal-content edit">
+        <form id="contact-form" class="contact-form" action="#">
+          <input id="close" type="button" class="btn" value="Close" />
+          <p>Edit</p>
+          <input
+            id="name-input"
+            type="text"
+            pattern="[A-Za-z]{3,}"
+            title="Please enter at least 3 characters"
+            required
+            class="modal_edit-input"
+            placeholder="Name"
+          />
+          <input
+            pattern="[A-Za-z]{3,}"
+            title="Please enter at least 3 characters"
+            required
+            id="vacancy-input"
+            type="text"
+            class="modal_edit-input"
+            placeholder="Vacancy"
+          />
+          <input
+            required
+            type="text"
+            class="modal_edit-input"
+            placeholder="Phone"
+            id="phone-input"
+            pattern="\+\d \d{3} \d{3} \d{2} \d{2}"
+            title="Format: +X XXX XXX XX XX"
+          />
+          <input class="btn save" type="submit" value="Edit" />
+        </form>
       </div>
     </div>
   </body>
   <script src="../script/main.js"></script>
 </html>
-
