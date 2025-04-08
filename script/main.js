@@ -143,7 +143,7 @@ function addContact(contact) {
   const contactsDataList = JSON.parse(localStorage.getItem(contactsDataKey));
   //Проверка на наличие объекта в базе данных
   if (isArrIncludeObj(contactsDataList, contact)) {
-    console.log("Объект уже есть в бд");
+    alert("Контакт уже существует");
   } else {
     addContactLocalStorage(contact);
     //Добавление контакта вниз списка
